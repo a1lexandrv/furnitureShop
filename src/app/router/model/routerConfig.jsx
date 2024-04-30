@@ -5,6 +5,8 @@ import { ProductPage } from '../../../pages/ProductPage';
 import { NotFoundPage } from '../../../pages/NotFoundPage';
 import { LoginPage } from '../../../pages/LoginPage';
 
+console.log('Привет!');
+
 const config = [
     {
         id: 2,
