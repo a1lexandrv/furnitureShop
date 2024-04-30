@@ -1,0 +1,15 @@
+.mainBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: brown;
+        color: white;
+    }
+}

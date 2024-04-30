@@ -1,0 +1,16 @@
+.page{
+    padding: 24px;
+}
+
+.title{
+    margin-bottom: 24px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+
+
