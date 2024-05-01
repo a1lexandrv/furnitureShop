@@ -1,9 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
 }
 .favouriteItems {
     display: flex;
     gap: 24px;
+}
+
+.emptyContainer {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid brown;
+    border-radius: 12px;
+    padding: 24px;
 }
