@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 import { MainButton } from '../../../shared/ui/MainButton';
 import { useState } from 'react';
-import store from '../../../shared/model/user';
+import userStore from '../../../shared/model/userStore';
 
 const LoginForm = observer(() => {
     const navigate = useNavigate();
@@ -13,9 +13,9 @@ const LoginForm = observer(() => {
 
     const onSubmitForm = (event) => {
         event.preventDefault();
-        store.login(nameValue, phoneValue);
+        userStore.login(nameValue, phoneValue);
 
-        if (store.isAuth) {
+        if (userStore.isAuth) {
             navigate('/profile');
         } else alert('Повторите попытку!');
     };

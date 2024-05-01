@@ -7,12 +7,10 @@ function EmptyContainer({ title, url, btnText }) {
     const navigate = useNavigate();
 
     return (
-        <>
-            <h2 className={styles.title}>
-                {title ? title : 'Страница пустая'}
-            </h2>
+        <div className={styles.container}>
+            {title && <h2>{title}</h2>}
             <MainButton text={btnText} onClick={() => navigate(url)} />
-        </>
+        </div>
     );
 }
 

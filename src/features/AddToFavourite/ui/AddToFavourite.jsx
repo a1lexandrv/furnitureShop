@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 
 import favourites from '../../../widgets/FavouritesList/model/store';
-import user from '../../../shared/model/user';
+import userStore from '../../../shared/model/userStore';
 import { LikeIcon } from '../../../shared/ui/LikeIcon';
 import { DislikeIcon } from '../../../shared/ui/DislikeIcon';
 
@@ -21,7 +21,7 @@ const AddToFavourite = observer(({ item }) => {
             ) : (
                 <LikeIcon
                     onAddFavorite={
-                        user.isAuth
+                        userStore.isAuth
                             ? () => favourites.addToFavourite(item)
                             : () => navigate('/login')
                     }

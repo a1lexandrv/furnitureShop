@@ -1,13 +1,24 @@
 import styles from './CartPage.module.scss';
-
-import store from '../model/store';
+import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
+
+import cartStore from '../../../shared/model/cartStore';
 import { Total } from '../../../entities/Total';
 import { EmptyContainer } from '../../../entities/EmptyContainer';
 import { CartItemsList } from '../../../widgets/CartItemsList';
 
 const CartPage = observer(() => {
-    return store.cartItems.length ? (
+    useEffect(() => {
+        const data = localStorage.getItem('cart');
+
+        if (data) {
+            const cartItems = JSON.parse(data);
+
+            cartItems.forEach((item) => cartStore.addToCart(item));
+        }
+    }, []);
+
+    return cartStore.cartItems.length ? (
         <div className={styles.page}>
             <h2 className={styles.title}>Корзина товаров</h2>
             <div className={styles.container}>

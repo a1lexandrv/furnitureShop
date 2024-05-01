@@ -1,4 +1,4 @@
-import user from '../model/user';
+import userStore from '../model/userStore';
 
 // Проверяем авторизован ли пользователь
 function checkAuth() {
@@ -6,7 +6,7 @@ function checkAuth() {
 
     if (data) {
         const newUser = JSON.parse(data);
-        user.login(newUser.name, newUser.phone);
+        userStore.login(newUser.name, newUser.phone);
     }
 }
 
