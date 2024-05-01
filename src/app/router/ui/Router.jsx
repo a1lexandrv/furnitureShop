@@ -1,22 +1,33 @@
-import React from 'react';
 import { Route, Routes } from 'react-router';
 
-import { config } from '../model/routerConfig';
+import { publicRoutes, privateRoutes } from '../model/routerConfig';
 import { Layout } from '../../../entities/Layout';
-import { MainPage } from '../../../pages/MainPage/';
+import { PrivateRouter } from './PrivateRouter';
 
 function Router() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index path="/" element={<MainPage />} />
-                {config.map((page) => (
+                {publicRoutes.map((route) => (
                     <Route
-                        key={page.id}
-                        path={page.path}
-                        element={page.element}
+                        path={route.path}
+                        element={route.component}
+                        index={route.index}
+                        exact={route.exact}
+                        key={route.path}
                     />
                 ))}
+                {/* Дальше приватные роуты */}
+                <Route element={<PrivateRouter />}>
+                    {privateRoutes.map((route) => (
+                        <Route
+                            path={route.path}
+                            element={route.component}
+                            key={route.path}
+                            exact={route.exact}
+                        />
+                    ))}
+                </Route>
             </Route>
         </Routes>
     );

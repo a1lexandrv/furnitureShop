@@ -1,51 +1,56 @@
-import { ProfilePage } from '../../../pages/ProfilePage';
-import { CartPage } from '../../../pages/CartPage';
+import { MainPage } from '../../../pages/MainPage';
 import { CatalogPage } from '../../../pages/CatalogPage';
 import { ProductPage } from '../../../pages/ProductPage';
-import { NotFoundPage } from '../../../pages/NotFoundPage';
+import { CartPage } from '../../../pages/CartPage';
+import { ProfilePage } from '../../../pages/ProfilePage';
 import { LoginPage } from '../../../pages/LoginPage';
+import { NotFoundPage } from '../../../pages/NotFoundPage';
 
-console.log('Привет!');
-
-const config = [
+const publicRoutes = [
     {
-        id: 2,
+        name: 'Главная',
+        path: '/',
+        component: <MainPage />,
+        exact: true,
+        index: true,
+    },
+    {
         name: 'Каталог',
         path: '/catalog',
-        element: <CatalogPage />,
+        component: <CatalogPage />,
+        exact: true,
     },
-    // Передаем динамический уникальный параметр, чтобы
-    // роутер понял на страницу какого именно товара нас перевести
     {
-        id: 3,
         name: 'Страница товара',
         path: '/catalog/:id',
-        element: <ProductPage />,
+        component: <ProductPage />,
     },
     {
-        id: 4,
         name: 'Корзина',
         path: '/cart',
-        element: <CartPage />,
+        component: <CartPage />,
+        exact: true,
     },
     {
-        id: 5,
-        name: 'Профиль',
-        path: '/profile',
-        element: <ProfilePage />,
-    },
-    {
-        id: 6,
-        name: '404',
-        path: '*',
-        element: <NotFoundPage />,
-    },
-    {
-        id: 7,
         name: 'Вход',
         path: '/login',
-        element: <LoginPage />,
+        component: <LoginPage />,
+        exact: true,
+    },
+    {
+        name: 'Страница не найдена',
+        path: '/404',
+        component: <NotFoundPage />,
     },
 ];
 
-export { config };
+const privateRoutes = [
+    {
+        name: 'Профиль',
+        path: '/profile',
+        component: <ProfilePage />,
+        exact: true,
+    },
+];
+
+export { publicRoutes, privateRoutes };
