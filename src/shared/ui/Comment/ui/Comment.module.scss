@@ -1,0 +1,13 @@
+.comment {
+    max-width: 500px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 24px;
+    gap: 8px;
+
+    h3 {
+        color: brown;
+    }
+}

@@ -1,0 +1,23 @@
+.itemContainer {
+    display: flex;
+    gap: 24px;
+}
+
+.infoContainer {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.image {
+    width: 500px;
+    height: auto;
+    border-radius: 24px;
+}
+
+.titleContainer {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}

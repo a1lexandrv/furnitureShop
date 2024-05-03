@@ -1,17 +1,10 @@
-import { observer } from 'mobx-react-lite';
-import styles from './RemoveFromCart.module.scss';
+import { observer } from "mobx-react-lite";
 
-import cartStore from '../../../shared/model/cartStore';
+import cartStore from "../../../shared/model/cartStore";
+import { RemoveIcon } from "../../../shared/ui/RemoveIcon/ui/RemoveIcon";
 
 const RemoveFromCart = observer(({ id }) => {
-    return (
-        <span
-            className={styles.icon}
-            onClick={() => cartStore.removeFromCart(id)}
-        >
-            ⌫  <span className={styles.text}>УДАЛИТЬ</span>
-        </span>
-    );
+  return <RemoveIcon onClick={() => cartStore.removeFromCart(id)} />;
 });
 
 export { RemoveFromCart };
