@@ -1,33 +1,18 @@
-import styles from "./ProductPage.module.scss";
+import styles from './ProductPage.module.scss';
+import { useParams } from 'react-router-dom';
 
-import { SaveItemLocal } from "../../../features/SaveItemLocal";
-import { FetchComments } from "../../../features/FetchComments/ui/FetchComments";
-import { BigProductCard } from "../../../entities/BigProductCard/ui/BigProductCard";
-import { Comments } from "../../../entities/Comments";
-import { EmptyContainer } from "../../../entities/EmptyContainer";
+import { BigProductCard } from '../../../widgets/BigProductCard';
+import { Comments } from '../../../widgets/Comments';
 
 function ProductPage() {
-  const comments = FetchComments();
-  const item = SaveItemLocal();
+    const { id } = useParams();
 
-  if (item.length) {
     return (
-      <div className={styles.page}>
-        <BigProductCard item={item} />
-        {comments.length ? <Comments comments={comments}></Comments> : null}
-      </div>
+        <div className={styles.page}>
+            <BigProductCard id={id} />
+            <Comments />
+        </div>
     );
-  }
-
-  return (
-    <div className={styles.page}>
-      <EmptyContainer
-        title="Товар распродан"
-        url="/catalog"
-        btnText="Посмотреть другие товары"
-      />
-    </div>
-  );
 }
 
 export { ProductPage };

@@ -1,1 +1,1 @@
-export { BigProductCard } from './ui/BigProductCard';
+export { BigProductCard } from "./ui/BigProductCard.jsx";

@@ -1,12 +1,12 @@
-import styles from "./Comment.module.scss";
+import styles from './Comment.module.scss';
 
-function Comment({ com }) {
-  return (
-    <div className={styles.comment}>
-      <h3>{com.user.username}</h3>
-      <p>{com.body}</p>
-    </div>
-  );
+function Comment({ username, body }) {
+    return (
+        <div className={styles.comment}>
+            <h3>{username}</h3>
+            <p>{body}</p>
+        </div>
+    );
 }
 
 export { Comment };

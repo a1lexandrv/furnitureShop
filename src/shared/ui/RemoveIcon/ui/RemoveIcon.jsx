@@ -1,13 +1,11 @@
-import styles from "./RemoveIcon.module.scss";
+import styles from './RemoveIcon.module.scss';
 
 function RemoveIcon({ onClick }) {
-  return (
-    <>
-      <span className={styles.icon} onClick={onClick}>
-        ⌫
-      </span>
-    </>
-  );
+    return (
+        <span className={styles.icon} onClick={onClick}>
+            ⌫
+        </span>
+    );
 }
 
 export { RemoveIcon };
