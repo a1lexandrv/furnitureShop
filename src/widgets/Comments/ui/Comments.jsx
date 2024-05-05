@@ -25,13 +25,16 @@ function Comments() {
 
     return comments.length ? (
         <div className={styles.comments}>
-            {comments.map((comment) => (
-                <Comment
-                    username={comment.user.username}
-                    body={comment.body}
-                    key={comment.id}
-                />
-            ))}
+            <h2>Comments</h2>
+            <div className={styles.commentsList}>
+                {comments.map((comment) => (
+                    <Comment
+                        username={comment.user.username}
+                        body={comment.body}
+                        key={comment.id}
+                    />
+                ))}
+            </div>
         </div>
     ) : null;
 }

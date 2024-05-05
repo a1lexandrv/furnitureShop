@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 class CartStore {
     cartItems = [];
+    cartCounter = 0;
 
     constructor() {
         makeAutoObservable(this);
@@ -12,6 +13,7 @@ class CartStore {
             return;
         } else {
             this.cartItems.push(item);
+            this.cartCounter = this.cartItems.length;
 
             const data = JSON.stringify(this.cartItems);
             localStorage.setItem('cart', data);
@@ -20,6 +22,7 @@ class CartStore {
 
     removeFromCart(id) {
         this.cartItems = this.cartItems.filter((item) => item.id !== id);
+        this.cartCounter = this.cartItems.length;
 
         const data = JSON.stringify(this.cartItems);
         localStorage.setItem('cart', data);

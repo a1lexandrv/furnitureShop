@@ -1,17 +1,17 @@
 .itemContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% auto;
     gap: 24px;
 }
 
 .infoContainer {
-    max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
 .image {
-    width: 500px;
+    width: 100%;
     height: auto;
     border-radius: 24px;
 }

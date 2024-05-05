@@ -1,4 +1,10 @@
 .comments {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.commentsList {
     padding: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
