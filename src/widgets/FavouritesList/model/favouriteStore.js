@@ -12,6 +12,9 @@ class FavouritesStore {
       return;
     } else {
       this.favouritesItems.push(item);
+
+      const data = JSON.stringify(this.favouritesItems);
+      localStorage.setItem("favourite", data);
     }
   }
 
@@ -19,6 +22,12 @@ class FavouritesStore {
     this.favouritesItems = this.favouritesItems.filter(
       (item) => item.id !== id
     );
+    const data = JSON.stringify(this.favouritesItems);
+    localStorage.setItem("favourite", data);
+
+    if (!this.favouritesItems.length) {
+      localStorage.removeItem("favourite");
+    }
   }
 }
 

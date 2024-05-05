@@ -1,32 +1,32 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from "mobx";
 
 class UserStore {
-    user = {};
-    isAuth = false;
+  user = {};
+  isAuth = false;
 
-    constructor() {
-        makeAutoObservable(this);
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    login(name, phone) {
-        (this.user = {
-            name: name,
-            phone: phone,
-        }),
-            (this.isAuth = true);
+  login(name, phone) {
+    (this.user = {
+      name: name,
+      phone: phone,
+    }),
+      (this.isAuth = true);
 
-        const data = JSON.stringify({ ...this.user });
+    const data = JSON.stringify({ ...this.user });
 
-        localStorage.setItem('user', data);
-        localStorage.setItem('isAuth', this.isAuth);
-    }
+    localStorage.setItem("user", data);
+    localStorage.setItem("isAuth", this.isAuth);
+  }
 
-    logout() {
-        (this.user = {}), (this.isAuth = false);
+  logout() {
+    (this.user = {}), (this.isAuth = false);
 
-        localStorage.removeItem('user');
-        localStorage.removeItem('isAuth');
-    }
+    localStorage.removeItem("user");
+    localStorage.removeItem("isAuth");
+  }
 }
 
 export default new UserStore();
