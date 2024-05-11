@@ -30,7 +30,7 @@ function BigProductCard({ id }) {
         <div className={styles.itemContainer}>
             <EmptyContainer
                 title="Товар распродан"
-                url="/catalog"
+                url="/"
                 btnText="Посмотреть другие товары"
             />
         </div>

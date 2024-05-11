@@ -8,13 +8,13 @@ import { NotFoundPage } from '../../../pages/NotFoundPage';
 const publicRoutes = [
     {
         name: 'Каталог',
-        path: '/catalog',
+        path: '/',
         component: <CatalogPage />,
         exact: true,
     },
     {
         name: 'Страница товара',
-        path: '/catalog/:id',
+        path: '/product/:id',
         component: <ProductPage />,
     },
     {

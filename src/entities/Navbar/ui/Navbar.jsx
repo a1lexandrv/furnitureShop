@@ -6,7 +6,7 @@ import { CartIndicator } from '../../../features/CartIndicator';
 function Navbar() {
     return (
         <div className={styles.navbar}>
-            <CustomLink url="/catalog">Каталог</CustomLink>
+            <CustomLink url="/">Каталог</CustomLink>
             <CustomLink url="/cart">
                 Корзина <CartIndicator />
             </CustomLink>

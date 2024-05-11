@@ -30,7 +30,7 @@ const CartPage = observer(() => {
         <div className={styles.page}>
             <EmptyContainer
                 title="Корзина пустая"
-                url="/catalog"
+                url="/"
                 btnText="Посмотреть товары"
             />
         </div>
