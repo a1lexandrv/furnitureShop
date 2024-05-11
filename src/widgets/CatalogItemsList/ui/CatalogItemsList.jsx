@@ -2,16 +2,17 @@ import React from 'react';
 import styles from './CatalogItemsList.module.scss';
 
 import { ProductCard } from '../../ProductCard';
-import { items } from '../../../app/api/items-data';
+import { observer } from 'mobx-react-lite';
+import catalog from '../../../pages/CatalogPage/model/catalog';
 
-function CatalogItemsList() {
+const CatalogItemsList = observer(() => {
     return (
         <div className={styles.container}>
-            {items.map((item) => (
+            {catalog.catalogItems.map((item) => (
                 <ProductCard key={item.id} item={item} />
             ))}
         </div>
     );
-}
+});
 
 export { CatalogItemsList };

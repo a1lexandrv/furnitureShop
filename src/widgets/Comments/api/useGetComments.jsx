@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { $api } from '../../../app/axios/axiosConfig';
-import { urls } from '../../../app/axios/urlsList';
+import { urls } from '../../../app/axios/urlsConfig';
 
 function useGetComments() {
     const [comments, setComments] = useState([]);

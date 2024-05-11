@@ -18,6 +18,7 @@ function Comments() {
     if (error) {
         return (
             <div className={styles.comments}>
+                <h2>Comments</h2>
                 <p>{error}</p>
             </div>
         );

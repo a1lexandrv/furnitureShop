@@ -8,11 +8,7 @@ function App() {
         checkAuth();
     }, []);
 
-    return (
-        <>
-            <Router />
-        </>
-    );
+    return <Router />;
 }
 
 export default App;

@@ -1,4 +1,3 @@
-import { MainPage } from '../../../pages/MainPage';
 import { CatalogPage } from '../../../pages/CatalogPage';
 import { ProductPage } from '../../../pages/ProductPage';
 import { CartPage } from '../../../pages/CartPage';
@@ -7,13 +6,6 @@ import { LoginPage } from '../../../pages/LoginPage';
 import { NotFoundPage } from '../../../pages/NotFoundPage';
 
 const publicRoutes = [
-    {
-        name: 'Главная',
-        path: '/',
-        component: <MainPage />,
-        exact: true,
-        index: true,
-    },
     {
         name: 'Каталог',
         path: '/catalog',
